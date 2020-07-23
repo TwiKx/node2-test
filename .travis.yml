@@ -5,3 +5,12 @@ services:
 script:
     - docker build -t twikx/node2 .
     - docker images twikx/node2
+
+before_deploy:
+    - docker login -u twikx -p &"Decembre1992
+
+deploy:
+    provider: script
+    script: docker push twikx/node2-test
+    on:
+        branch: master
