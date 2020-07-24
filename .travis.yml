@@ -3,14 +3,14 @@ services:
     - docker
 
 script:
-    - docker build -t twikx/node2 .
-    - docker images twikx/node2
+    - docker build -t $GIT_USER/node2 .
+    - docker images $GIT_USER/node2
 
 before_deploy:
     - docker login -u $GIT_USER -p $GIT_PASSWORD
 
 deploy:
     provider: script
-    script: docker push twikx/node2-test
+    script: docker push $GIT_USER/node2-test
     on:
         branch: master
