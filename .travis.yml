@@ -7,7 +7,7 @@ script:
     - docker images twikx/node2
 
 before_deploy:
-    - docker login -u twikx -p &"Decembre1992
+    - docker login -u $GIT_USER -p $GIT_PASSWORD
 
 deploy:
     provider: script
